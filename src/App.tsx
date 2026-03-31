@@ -106,9 +106,11 @@ export default function App() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement) return;
       
-      if (e.key === 'ArrowRight') {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter' || e.key === 'PageDown' || e.key === 'ArrowDown') {
+        e.preventDefault();
         nextSlide();
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {
+        e.preventDefault();
         prevSlide();
       }
     };
